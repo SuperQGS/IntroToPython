@@ -1,7 +1,17 @@
-#write a program that asks a person for their first and last name the
-#reformats it so that it appears LAST, FIRST
-print (2 ** 2 ** 3 * 3)
-name = raw_input("ENTER NAME: ")
-name_split = name.split(" ")
-print name_split[::-1]
-
+grade = raw_input("Enter your grade: ")
+if grade >= 90:
+    print("A")
+    print("eh")
+if grade <= 90 and grade >= 80:
+    print("B")
+    print("room for improvement")
+if grade < 80 and grade >= 70:
+    print("C")
+    print("have fun working at mcdonalds")
+if grade < 70 and grade >= 60:
+    print("D")
+    print("You are a life faliure")
+if grade < 60:
+    print("F")
+    print("Get in the bag")
+#this is a feature now
