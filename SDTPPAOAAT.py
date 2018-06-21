@@ -1,3 +1,4 @@
+global food
 global gold
 global crew
 global cannonballs
@@ -36,28 +37,28 @@ def encounter():
         sea()
 
 def ship():
+    global food
+    global gold
+    global crew
+    global cannonballs
     if cannonballs < 1:
         print("You encounter a hostile ship and don't have enough cannonballs to defend yourself! Game Over!")
     else:
         ship_confirm = raw_input("You encounter a hostile ship! Would you like to engage in battle? : ")
         if ship_confirm == "Y":
             
-            shipran = randint(1, 3)
-            if shipran == 3:
-                global gold
-                global crew
-                global cannonballs
+            shipran = randint(1, 5)
+            if shipran > 3:
+                #global
                 
-                gold += 20
+                gold += 25
                 cannonballs += 5
                 print(supplies %(food, crew, gold, cannonballs))
-                print("You won the battle and gained supplies! (+20 gold  +5 cannonballs)")
+                print("You won the battle and gained supplies! (+25 gold  +5 cannonballs)")
                 print("")
                 check()
             else:
-                global gold
-                global crew
-                global cannonballs
+                #global
                 gold -= 10
                 crew -= 10
                 cannonballs -= 10
@@ -69,20 +70,27 @@ def ship():
             print("You run away from the battle.")
             check()
 def town():
+    global food
+    global gold
+    global crew
+    global cannonballs
     print(supplies %(food, crew, gold, cannonballs))
-    town_confirm = raw_input("You encounter a friendly town. Would you like to trade? (Y = -20 gold and +20 food): ")
+    town_confirm = raw_input("You encounter a friendly town. Would you like to trade? (Y = -10 gold and +20 food): ")
     if town_confirm == "Y":
-        global gold
-        global food
-        gold -= 20
+        #global
+        gold -= 10
         food += 20
-        print("You buy 20 food for 20 gold!")
+        print("You buy 20 food for 10 gold!")
         check()
     else:
         print("You don't buy anything")
         check()
 def sea():
     global food
+    global gold
+    global crew
+    global cannonballs
+    #global
     food -= 10
     print(supplies %(food, crew, gold, cannonballs))
     sea_confirm = raw_input("You encounter a storm and lose supplies! (-10 food) Continue? : ")
